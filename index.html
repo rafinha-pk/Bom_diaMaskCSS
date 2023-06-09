@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<meta charset='UTF-8'>
+<head>
+  <title>Exemplo de uso de texto como mascara</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
+  <link rel="stylesheet" href="css.css">
+  <script type="text/javascript">
+    $(document).ready(function()
+    {
+      function Redimenciona()
+      {
+        // manter as letras relativamente proporcionais
+        var windowWidth = $(window).width(); // largura da janela
+        var windowHeight = $(window).height(); // altura da janela
+        
+        $('#text-container').css({width: windowWidth, height: windowHeight}); // atribuindo os tamanhos da janela a div principal
+        
+        // Calcular a largura e altura da div texto
+        var textWidth = $('#video-text').width();
+        var textHeight = $('#video-text').height();
+        
+        // Redimensionar o texto para ajustá-lo ao tamanho da página
+        var scaleFactor = Math.min(windowWidth / textWidth, windowHeight / textHeight);
+        var newFontSize = Math.floor(300 * scaleFactor); // Tamanho de fonte inicial: 300px
+        $('#video-text').css('font-size', newFontSize + 'px'); // atribui novo valor calculado
+      }
+      $(window).on('resize', function() {
+        Redimenciona(); // chamando a funçãozinha quando a janela for redimencionada
+      }).trigger('resize');
+      Redimenciona(); // primeira rodada de redimencionamento
+    });
+  </script>
+</head>
+<body>
+  <div id="text-container">
+    <div id="vertical-center">
+      <h1 id="video-text">BOM DIA!</h1>
+    </div>
+  </div>
+</body>
+</html>

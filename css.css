@@ -1,0 +1,29 @@
+body
+{
+  font-family: "Anton", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #87ceeb;
+}
+
+#video-text
+{
+  font-size: 300px;
+  font-weight: bold;
+  line-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: url("http://191.241.235.43/mjpg/video.mjpg?timestamp=1686315265841");
+  background-size: contain;
+  flex-grow: 1;
+}
+h1
+{
+  -webkit-text-stroke: 5px #B0E0E6;
+  text-stroke: 5px #B0E0E6;
+}
